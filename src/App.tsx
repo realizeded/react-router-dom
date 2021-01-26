@@ -18,7 +18,7 @@ const App:React.FC<Props> = function(props) {
             <Switch>
                 <Route path="/home" exact component={Home}></Route>
                 <Route path="/user" component={User}></Route>
-                <Route path="/about" component={About}></Route>
+                <Route path="/about/:id" component={About}></Route>
                 <Redirect to="/home"/>
                 </Switch>
         </HashRouter>

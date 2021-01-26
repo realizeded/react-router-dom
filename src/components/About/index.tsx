@@ -1,5 +1,5 @@
 import React from 'react';
-import {RouteComponentProps} from 'react-router-dom';
+import {RouteComponentProps} from '../../react-router-dom';
 interface Props extends RouteComponentProps{
 
 }
@@ -11,7 +11,7 @@ class About extends React.Component<Props,State> {
         super(props);
     }
     render() {
-        return (<div>About</div>);
+        return (<div>About{this.props.match.params.id}</div>);
     }
 }
 export default About;

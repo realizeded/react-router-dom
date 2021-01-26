@@ -17,13 +17,21 @@ class Route extends React.Component<Props,{}> {
             <Consumer>
                 {
                     (state)=>{
+ 
+                        const {location} = state;
+                        const params:{
+                            [key:string]:any
+                        } = {};
+                        const pathname = location.pathname;
+                        let result = isMatch(pathname,path,exact,params);
                         const props = {
                             location:state.location,
-                            history:state.history
-                        }
-                        const {location} = state;
-                        const pathname = location.pathname;
-                        let result = isMatch(pathname,path,exact);
+                            history:state.history,
+                            match:{
+                                ...state.match,
+                                params
+                            }
+                        };
                         return result?(<Component {...props}/>):null;
                     }
                 }

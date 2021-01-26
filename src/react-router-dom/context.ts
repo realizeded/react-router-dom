@@ -8,6 +8,9 @@ const defaultContext:RouteComponentProps = {
         push(to:string) {
             
         }
+    },
+    match:{
+        params:{}
     }
 }
 const context = React.createContext(defaultContext);

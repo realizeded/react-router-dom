@@ -12,6 +12,9 @@ class HashRouter extends React.Component<{},RouteComponentState> {
                 push(to:string) {
                     window.location.hash = to;
                 }
+            },
+            match:{
+                params:{}
             }
         };
     }
